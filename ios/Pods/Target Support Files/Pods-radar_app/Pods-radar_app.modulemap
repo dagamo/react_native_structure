@@ -1,0 +1,6 @@
+module Pods_radar_app {
+  umbrella header "Pods-radar_app-umbrella.h"
+
+  export *
+  module * { export * }
+}
