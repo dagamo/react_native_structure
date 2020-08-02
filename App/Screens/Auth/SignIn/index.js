@@ -1,11 +1,14 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, SafeAreaView } from 'react-native';
+import { widthPercentageToDP as wp } from 'react-native-responsive-screen';
 
 const SignIn = () => {
 	return (
-		<View>
-			<Text>SignIn</Text>
-		</View>
+		<SafeAreaView>
+			<View>
+				<Text>SignIn</Text>
+			</View>
+		</SafeAreaView>
 	);
 };
 

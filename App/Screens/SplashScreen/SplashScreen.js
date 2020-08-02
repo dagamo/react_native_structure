@@ -2,13 +2,20 @@ import React, { useEffect } from 'react';
 import { Text, View } from 'react-native';
 import styles from './SplashScreenStyle';
 import { Helpers } from 'App/Theme';
+//services
 import navigation from 'App/Services/NavigationService';
+import { getToken } from 'App/Services/Auth';
 
 const SplashScreen = () => {
 	useEffect(() => {
-		setTimeout(() => {
-			navigation.replace('MainScreen');
-		}, 1000);
+		setTimeout(async () => {
+			const token = await getToken();
+			if (token.success) {
+				navigation.replace('MainScreen');
+			} else {
+				navigation.replace('Auth');
+			}
+		}, 500);
 	}, []);
 
 	return (
